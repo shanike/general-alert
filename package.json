@@ -1,0 +1,27 @@
+{
+  "name": "general-alert",
+  "version": "1.0.0",
+  "description": "A general alert provider to use in a React JS project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shanike/general-alert.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shanike/general-alert/issues"
+  },
+  "homepage": "https://github.com/shanike/general-alert#readme",
+  "dependencies": {
+    "@types/node": "^12.20.4",
+    "@types/react": "^17.0.3",
+    "react": "^17.0.1"
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
