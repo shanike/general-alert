@@ -1,7 +1,6 @@
 # general-alert
 A general alert provider to use in a React JS project
 
-### Table of Contents
 **[What have we here](#What-have-we-here)**<br>
 **[Usage](#Usage)**<br>
 **[HOW TO USE openGenAlert function:](#HOW-TO-USE-openGenAlert-function)**<br>
