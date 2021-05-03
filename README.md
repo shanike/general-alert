@@ -2,14 +2,10 @@
 A general alert provider to use in a React JS project
 
 ### Table of Contents
-**[What have we here? (overview)](#what-have-we-here)**<br>
-**[Usage: (steps to do)](#usage)**<br>
-**[HOW TO USE openGenAlert function:](#using-the-different-functions)**<br>
+**[What have we here? (overview)](#What-have-we-here?-(overview))**<br>
+**[Usage: (steps to do)](#Usage:-(steps-to-do))**<br>
+**[HOW TO USE openGenAlert function:](#HOW-TO-USE-openGenAlert-function)**<br>
 **[types](#types)**<br>
-
-**[Notes and Miscellaneous](#notes-and-miscellaneous)**<br>
-**[Building the Extension Bundles](#building-the-extension-bundles)**<br>
-**[Next Steps, Credits, Feedback, License](#next-steps)**<br>
 
 
 
@@ -58,7 +54,7 @@ const { openGenAlert } = useGenAlert()
 ```tsx
     openGenAlert({ text: "user info was updated successfully" });
 ```
-**open a popup**: (dialog with the use)
+**open a popup**: (dialog with the user)
 ```tsx
     openGenAlert({ text: "are you sure?", isPopup: { okayText: "yes", cancelText:"no, I take that back" } });
 ```
@@ -74,28 +70,38 @@ const { openGenAlertSync } = useGenAlert()
 // ...
 let answer = await openGenAlertSync({ text: "are you sure?", isPopup: { okayText: "yes", cancelText:"no, I take that back" } });
 ```
-(does not reject)
+(does not reject -- no need for try/catch)
 
 ## types:
 ### openGenAlert:
-```tsx
-/** 
- * @Prop obj:{
-     @Obj_Prop text :string alert text
-     @Obj_Prop warning :boolean (for alerts only) will color the alert red-ish, 
-     @Obj_Prop center :boolean (for alerts only) if false, will show the alert in the bottom left of the screen (defaults to true)
-     @Obj_Prop noTimeout :boolean (for alerts only) if true the alert will not disappear after 5 sec
-     @Obj_Prop okayText :string | boolean(for popups only) text value for "okay" button in popup, default is "אישור"
-     @Obj_Prop cancelText :string | boolean (for popups only) text value for "cancel" button in popup, default is "ביטול"
- * } 
-   * @Prop popupCb :Function (for popups only) - is used only if got obj.isPopup, returnes the user's answer (in the popup there 
-            could be two buttons:  "okay" (true) or "cancel" (false) )
-*/
+```ts
+    prop 1: 
+    obj: {
+        text :string // alert text
+        warning :boolean // (for alerts only) will color the alert red-ish, 
+        center :boolean // (for alerts only) if false, will show the alert in the bottom left of the screen (defaults to true)
+        noTimeout :boolean // (for alerts only) if true the alert will not disappear after 5 sec
+        okayText :string | boolean // (for popups only) text value for "okay" button in popup, default is "אישור"
+        cancelText :string | boolean // (for popups only) text value for "cancel" button in popup, default is "ביטול"
+    }
+    prop 2: 
+    popupCb: (res: boolean) => void // (for popups only) - returnes the user's answer (in the popup there
+                      // could be two buttons: "okay" (true) or "cancel" (false)
 ```
 
 ### openGenAlertSync:
-same props as openGenAlert, except popupCb is not expected
-useful for popup
+same props as openGenAlert, except some props in obj are not expected (e.g. don't need: popupCb, center, warning, noTimeout)
+```tsx
+    prop 1 (and only):
+    obj: {
+        text :string // same as openGenAlert
+        isPopup: {
+            okayText :string | boolean // same as openGenAlert
+            cancelText :string | boolean // same as openGenAlert
+        }
+    }
+```
+**useful for popup**
 you can use it as so: 
 ```tsx
 let userAccepts:boolean = await openGenAlertSync({ text, isPopup: { okayText: "מתאים לי", cancelText: "בטל" } })
