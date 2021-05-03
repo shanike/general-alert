@@ -2,8 +2,8 @@
 A general alert provider to use in a React JS project
 
 ### Table of Contents
-**[What have we here? (overview)](#What-have-we-here?-(overview))**<br>
-**[Usage: (steps to do)](#Usage:-(steps-to-do))**<br>
+**[What have we here](#What-have-we-here)**<br>
+**[Usage](#Usage)**<br>
 **[HOW TO USE openGenAlert function:](#HOW-TO-USE-openGenAlert-function)**<br>
 **[types](#types)**<br>
 
@@ -13,13 +13,15 @@ A general alert provider to use in a React JS project
 #### * You may change any file you **copied**, especially the .scss file - to match your project's UI
 
 
-## What have we here? (overview)
+## What have we here
+### overview of the fiels in the repository:
 1) A GeneralAlert component and a GeneralPopup component (in ```components/GeneralAlert.tsx```)
 2) A ```GeneralAlert.scss``` file for styling the GeneralAlert and the GeneralPopup (```components/GeneralAlert.scss```)
 3) A context Provider (```context/GenAlertProvider.tsx```) (exports a Provider and a Hook)
 4) A ```general-alert.types.ts``` file for context + components
 
-## Usage: (steps to do)
+## Usage
+### steps to do:
 
 1) Copy ```GeneralAlert.tsx``` file and ```GeneralAlert.scss``` files from ```components/``` folder into **your project**
 2) Copy ```GeneralAlertProvider``` file into your project
