@@ -1,54 +1,68 @@
 # general-alert
 A general alert provider to use in a React JS project
 
-### What have we here?
+### Table of Contents
+**[What have we here? (overview)](#what-have-we-here)**<br>
+**[Usage: (steps to do)](#usage)**<br>
+**[HOW TO USE openGenAlert function:](#using-the-different-functions)**<br>
+**[types](#types)**<br>
+
+**[Notes and Miscellaneous](#notes-and-miscellaneous)**<br>
+**[Building the Extension Bundles](#building-the-extension-bundles)**<br>
+**[Next Steps, Credits, Feedback, License](#next-steps)**<br>
+
+
+
+#### * You may change it from .ts and .tsx to .js and .jsx
+#### * You may change any file you **copied**, especially the .scss file - to match your project's UI
+
+
+## What have we here? (overview)
 1) A GeneralAlert component and a GeneralPopup component (in ```components/GeneralAlert.tsx```)
 2) A ```GeneralAlert.scss``` file for styling the GeneralAlert and the GeneralPopup (```components/GeneralAlert.scss```)
 3) A context Provider (```context/GenAlertProvider.tsx```) (exports a Provider and a Hook)
 4) A ```general-alert.types.ts``` file for context + components
 
-### Usage:
+## Usage: (steps to do)
 
 1) Copy ```GeneralAlert.tsx``` file and ```GeneralAlert.scss``` files from ```components/``` folder into **your project**
 2) Copy ```GeneralAlertProvider``` file into your project
 3) Wrap your project with the ```GeneralAlertProvider``` (exported from ```GeneralAlertProvider.tsx```)
-4) In a component inside your project you may use the generalAlert hook: useGenAlert() (exported from ```GeneralAlertProvider.tsx```)
+4) In a component inside your project you may use the generalAlert hook: ```useGenAlert()``` (exported from ```GeneralAlertProvider.tsx```)
 5)
 ```tsx
-    import { useGenAlert } from '....../generalAlertProvider'; // a copy of context/GeneralAlertProvider.tsx
+    import { useGenAlert } from '....../generalAlertProvider'; // a copy file of the context/GeneralAlertProvider.tsx file from this repository
 
-    // ...
-
+    // ... in React component :
     const { openGenAlert } = useGenAlert();
-    // ...
+    
+    // ... in function, or wherever in the component :
     openGenAlert({ text: "my first alert" });
+    // or: (more about the different functions ahead)
     const userRes = await openGenAlertSync({ text: "my first popup!", isPopup: { okayText:"got it!", cancelText:"cancel..." } });
 ```
-
-#### * You may change it from .ts, .tsx to .js, .jsx
-#### * You may change any file you **copied**, especially the .scss file - to match your project's UI
 
 
 
 ## HOW TO USE openGenAlert function:
 
 ### EXAMPLE:
-first of all get the context: 
+remider to first of all get the context: 
 
 ```tsx
 const genAlertCtx = useGenAlert()
 // or: recommended: get functions straight away
 const { openGenAlert } = useGenAlert()
 ```
-open an alert: (nice text at the bottom center of the screen)
+**open an alert**: (nice text at the bottom center of the screen)
 ```tsx
     openGenAlert({ text: "user info was updated successfully" });
 ```
-open a popup: (dialog with the use)
+**open a popup**: (dialog with the use)
 ```tsx
     openGenAlert({ text: "are you sure?", isPopup: { okayText: "yes", cancelText:"no, I take that back" } });
 ```
-and to get the user's answer add:
+**and to get the user's answer add:**
 
 1:
 ```tsx
