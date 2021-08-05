@@ -1,5 +1,7 @@
 # general-alert
-A general alert provider to use in a React JS project
+A general-alert component which is managed by React's Context/Provider api, to use in a React project.
+(Written in TypeScript)
+
 
 **[What have we here](#What-have-we-here)**<br>
 **[Usage](#Usage)**<br>
