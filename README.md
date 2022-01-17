@@ -45,7 +45,7 @@ A general-alert component which is managed by React's Context/Provider api, to u
 
 
 ## HOW TO USE openGenAlert function:
-
+(the interesting part...)
 ### EXAMPLE:
 remider to first of all get the context: 
 
@@ -66,20 +66,22 @@ const { openGenAlert } = useGenAlert()
 
 1:
 ```tsx
-    openGenAlert({ text: "are you sure?", isPopup: { okayText: "yes", cancelText:"no, I take that back" } }, (answer) => {  } );
+        openGenAlert({ text: "are you sure?", isPopup: { okayText: "yes", cancelText: "no, I take that back" } }
+            , (answer) => { }
+        );
 ```
 or 2: *use openGenAlertSync* which returns a Promise
 ```tsx
 const { openGenAlertSync } = useGenAlert()
 // ...
-let answer = await openGenAlertSync({ text: "are you sure?", isPopup: { okayText: "yes", cancelText:"no, I take that back" } });
+const answer = await openGenAlertSync({ text: "are you sure?", isPopup: { okayText: "yes", cancelText:"no, I take that back" } });
 ```
 (does not reject -- no need for try/catch)
 
 ## types:
 ### openGenAlert:
 ```ts
-    prop 1: 
+    // prop 1: 
     obj: {
         text :string // alert text
         warning :boolean // (for alerts only) will color the alert red-ish, 
@@ -88,7 +90,7 @@ let answer = await openGenAlertSync({ text: "are you sure?", isPopup: { okayText
         okayText :string | boolean // (for popups only) text value for "okay" button in popup, default is "אישור"
         cancelText :string | boolean // (for popups only) text value for "cancel" button in popup, default is "ביטול"
     }
-    prop 2: 
+    // prop 2: 
     popupCb: (res: boolean) => void // (for popups only) - returnes the user's answer (in the popup there
                       // could be two buttons: "okay" (true) or "cancel" (false)
 ```
@@ -96,7 +98,7 @@ let answer = await openGenAlertSync({ text: "are you sure?", isPopup: { okayText
 ### openGenAlertSync:
 same props as openGenAlert, except some props in obj are not expected (e.g. don't need: popupCb, center, warning, noTimeout)
 ```tsx
-    prop 1 (and only):
+    // prop 1 (and only):
     obj: {
         text :string // same as openGenAlert
         isPopup: {
@@ -108,6 +110,12 @@ same props as openGenAlert, except some props in obj are not expected (e.g. don'
 **useful for popup**
 you can use it as so: 
 ```tsx
-let userAccepts:boolean = await openGenAlertSync({ text, isPopup: { okayText: "מתאים לי", cancelText: "בטל" } })
+    const userAccepts: boolean = await openGenAlertSync({
+        text,
+        isPopup: {
+            okayText: "מתאים לי",
+            cancelText: "בטל"
+        }
+    })
 ```
 * another way is to pass a callback to openGenAlert func
