@@ -3,8 +3,8 @@ A general-alert component which is managed by React's Context/Provider api, to u
 (Written in TypeScript)
 
 
-**[What have we here](#What-have-we-here)**<br>
-**[Usage](#Usage)**<br>
+**[What have we here:](#What-have-we-here)**<br>
+**[HOT TO add to my project:](#HOW-TO-add-to-my-project)**<br>
 **[HOW TO USE openGenAlert function:](#HOW-TO-USE-openGenAlert-function)**<br>
 **[types](#types)**<br>
 
@@ -14,14 +14,14 @@ A general-alert component which is managed by React's Context/Provider api, to u
 #### * You may change any file you **copied**, especially the .scss file - to match your project's UI
 
 
-## What have we here
+## What have we here:
 ### overview of the fiels in the repository:
 1) A GeneralAlert component and a GeneralPopup component (in ```components/GeneralAlert.tsx```)
 2) A ```GeneralAlert.scss``` file for styling the GeneralAlert and the GeneralPopup (```components/GeneralAlert.scss```)
 3) A context Provider (```context/GenAlertProvider.tsx```) (exports a Provider and a Hook)
 4) A ```general-alert.types.ts``` file for context + components
 
-## Usage
+## HOW TO add to my project:
 ### steps to do:
 
 1) Copy ```GeneralAlert.tsx``` file and ```GeneralAlert.scss``` files from ```components/``` folder into **your project**
