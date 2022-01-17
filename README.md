@@ -27,7 +27,7 @@ A general-alert component which is managed by React's Context/Provider api, to u
 1) Copy ```GeneralAlert.tsx``` file and ```GeneralAlert.scss``` files from ```components/``` folder into **your project**
 2) copy ```general-alert.types.ts``` file into **your project**
 3) Copy ```GeneralAlertProvider``` file into **your project**
-4) Wrap your project with the ```GeneralAlertProvider``` (exported from ```GeneralAlertProvider.tsx```)
+4) Wrap your project with the ```GenAlertProvider``` (exported from ```GeneralAlertProvider.tsx```)
 5) In a component inside your project you may use the generalAlert hook: ```useGenAlert()``` (exported from ```GeneralAlertProvider.tsx```)
 6)
 ```tsx
